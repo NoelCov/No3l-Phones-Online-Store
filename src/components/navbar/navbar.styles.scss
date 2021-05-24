@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+
+  .navbar-title {
+    font-size: 22px;
+  }
+
+  .navbar-links-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .navbar-link {
+      font-size: 28px;
+      margin: 0 20px;
+    }
+
+    .navbar-login-button {
+      padding: 4px 20px;
+      background-color: #161616;
+      color: white;
+      margin: auto 15px;
+      border-radius: 4px;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #357e7e;
+        color: black;
+      }
+    }
+  }
+}
