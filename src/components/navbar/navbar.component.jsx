@@ -12,7 +12,8 @@ export const NavBar = () => {
       <div className="navbar-links-container">
         <SearchIcon className="navbar-link" />
         <ShoppingCartIcon className="navbar-link" />
-        <span onClick={() => console.log("Hello")} className="navbar-login-button">Login</span>
+        {/* I have to finish this function to take me to the login page */}
+        <span onClick={() => console.log("Open login page")} className="navbar-login-button">Login</span>
       </div>
     </nav>
   );

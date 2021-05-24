@@ -1,0 +1,10 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 15px;
+
+  .footer-link {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
