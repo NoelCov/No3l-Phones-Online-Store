@@ -8,14 +8,14 @@ import nokiaLogo from "../../assets/images/nokia-logo.jpg";
 import samsungLogo from "../../assets/images/samsung-logo.jpg";
 
 const logos = [
-  appleLogo,
-  googleLogo,
-  huaweiLogo,
-  lenovoLogo,
-  lgLogo,
-  motorolaLogo,
-  nokiaLogo,
-  samsungLogo,
+  { image: appleLogo, brand: "apple" },
+  { image: googleLogo, brand: "google" },
+  { image: huaweiLogo, brand: "huawei" },
+  { image: lenovoLogo, brand: "lenovo" },
+  { image: lgLogo, brand: "lg" },
+  { image: motorolaLogo, brand: "motorola" },
+  { image: nokiaLogo, brand: "nokia" },
+  { image: samsungLogo, brand: "samsung" },
 ];
 
 export default logos;

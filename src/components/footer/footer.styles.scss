@@ -1,7 +1,10 @@
 .footer {
   display: flex;
   justify-content: space-around;
-  padding: 0 15px;
+  margin: 10px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 
   .footer-link {
     font-size: 18px;
