@@ -7,7 +7,7 @@ const LogoContainer = ({ imageUrl, brand, history }) => {
 
   const handleClick = () => {
     // Generate the url for the user
-    const url = generatePath("/phones/:brand", {
+    const url = generatePath("/:brand", {
       brand: brand,
     });
     history.push(`${url}`);

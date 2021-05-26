@@ -1,4 +1,4 @@
-import appleLogo from "../../assets/images/apple-logo.jpg";
+import appleLogo from "../../assets/images/apple-logo.jpg"
 import googleLogo from "../../assets/images/google-logo.jpg";
 import huaweiLogo from "../../assets/images/huawei-logo.jpg";
 import lenovoLogo from "../../assets/images/lenovo-logo.jpg";

@@ -2,9 +2,9 @@ import React from "react";
 
 import "./logos-container.styles.scss";
 
-import logos from "./logos-data";
-
 import LogoContainer from "../logo-container/logo-container.component";
+
+import logos from "./logos-data";
 
 export const LogosContainer = () => {
   return (
