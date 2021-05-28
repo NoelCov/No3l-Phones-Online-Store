@@ -1,14 +1,18 @@
 .sign-in-container {
-  background-color: rgb(12, 12, 12);
+  background-color: #403F45;
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .sign-in-title {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
     color: white;
     margin: 10px 0;
+  }
+
+  .form {
+    width: 400px;
   }
 }
