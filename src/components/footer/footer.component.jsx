@@ -1,19 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./footer.styles.scss";
 
 export const Footer = () => {
   return (
     <div className="footer">
-      {/* OPEN LINKS */}
-      <span
-        onClick={() => console.log("About us page")}
-        className="footer-link"
-      >
-        Customer Service
-      </span>
-      <span className="footer-link">FAQ</span>
-      <span className="footer-link">About us</span>
+      <Link to="/about">
+        {" "}
+        <span
+          onClick={() => console.log("About us page")}
+          className="footer-link"
+        >
+          Customer Service
+        </span>
+      </Link>
+      <Link to="/about">
+        <span className="footer-link">FAQ</span>
+      </Link>
+      <Link to="/about">
+        {" "}
+        <span className="footer-link">About us</span>
+      </Link>
     </div>
   );
 };
