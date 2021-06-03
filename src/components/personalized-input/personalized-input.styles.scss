@@ -10,4 +10,8 @@
   &:focus {
     outline: none;
   }
+
+  &::placeholder {
+    color: black;
+  }
 }

@@ -6,7 +6,9 @@ import SearchIcon from "@material-ui/icons/Search";
 
 import "./navbar.styles.scss";
 
-export const NavBar = () => {
+import { auth } from "../../firebase/firebase.utils";
+
+export const NavBar = ({ currentUser }) => {
   return (
     <nav className="navbar">
       <Link to="/">
@@ -15,9 +17,13 @@ export const NavBar = () => {
       <div className="navbar-links-container">
         <SearchIcon className="navbar-link" />
         <ShoppingCartIcon className="navbar-link" />
-        <Link to="/signin">
-          <span className="navbar-login-button">Login</span>
-        </Link>
+        {currentUser ? (
+          <span className="navbar-login-button" onClick={() => auth.signOut()}>Sign Out</span>
+        ) : (
+          <Link to="/signin">
+            <span className="navbar-login-button">Sign In</span>
+          </Link>
+        )}
       </div>
     </nav>
   );
