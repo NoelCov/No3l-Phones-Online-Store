@@ -8,7 +8,11 @@ import { PersonalizedButton } from "../personalized-button/personalized-button.c
 
 import { GrGoogle } from "react-icons/gr";
 
-import { signInWithGoogle, auth } from "../../firebase/firebase.utils";
+import {
+  signInWithGoogle,
+  auth,
+  createUser,
+} from "../../firebase/firebase.utils";
 
 export default class SignIn extends Component {
   constructor() {
@@ -29,7 +33,8 @@ export default class SignIn extends Component {
   handleSubmit = (email, password) => {
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(() => {
+      .then((user) => {
+        createUser(user);
         this.setState({ email: "", password: "" });
       })
       .catch((error) => {

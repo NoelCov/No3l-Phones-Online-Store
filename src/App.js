@@ -38,13 +38,19 @@ export default class App extends Component {
 
     return (
       <div>
-        <NavBar currentUser={currentUser} />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/about" component={InformationPage} />
-          <Route exact path="/signin" component={SignInPage} />
-          <Route path="/" component={Phones} />
-        </Switch>
+        <div className="page-content">
+          <NavBar currentUser={currentUser} />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/about" component={InformationPage} />
+            <Route
+              exact
+              path="/signin"
+              render={() => (currentUser ? <HomePage /> : <SignInPage />)}
+            />
+            <Route path="/" component={Phones} />
+          </Switch>
+        </div>
         <Footer />
       </div>
     );

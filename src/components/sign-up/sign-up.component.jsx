@@ -6,7 +6,7 @@ import { PersonalizedContainer } from "../personalized-container/personalized-co
 import { PersonalizedInput } from "../personalized-input/personalized-input.component";
 import { PersonalizedButton } from "../personalized-button/personalized-button.component";
 
-import { auth } from "../../firebase/firebase.utils";
+import { auth, createUser } from "../../firebase/firebase.utils";
 
 export default class SignUp extends Component {
   constructor() {
@@ -25,11 +25,11 @@ export default class SignUp extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = (email, password) => {
+  handleSubmit = (email, password, name) => {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((user) => {
-        console.log(user, "Success");
+        createUser(user, name);
 
         this.setState({ name: "", email: "", password: "" });
       })
@@ -77,7 +77,7 @@ export default class SignUp extends Component {
               type="Submit"
               text="Sign Up"
               onClick={() => {
-                this.handleSubmit(email, password);
+                this.handleSubmit(email, password, name);
               }}
             />
           </form>
