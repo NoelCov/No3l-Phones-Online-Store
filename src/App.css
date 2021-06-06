@@ -10,5 +10,7 @@ a {
 }
 
 .page-content {
-  margin-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
 }

@@ -16,9 +16,13 @@ export const NavBar = ({ currentUser }) => {
       </Link>
       <div className="navbar-links-container">
         <SearchIcon className="navbar-link" />
-        <ShoppingCartIcon className="navbar-link" />
+        <Link to="/payment">
+          <ShoppingCartIcon className="navbar-link" />
+        </Link>
         {currentUser ? (
-          <span className="navbar-login-button" onClick={() => auth.signOut()}>Sign Out</span>
+          <span className="navbar-login-button" onClick={() => auth.signOut()}>
+            Sign Out
+          </span>
         ) : (
           <Link to="/signin">
             <span className="navbar-login-button">Sign In</span>

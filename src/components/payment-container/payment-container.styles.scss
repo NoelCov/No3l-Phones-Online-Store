@@ -1,0 +1,33 @@
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 900px;
+
+  .payment-title {
+    font-size: 25px;
+    align-self: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+
+  .payment-info-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: #e0e0e0;
+    align-self: center;
+
+    .info-property {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 8px 0;
+    }
+  }
+
+  .cart-items-container {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
