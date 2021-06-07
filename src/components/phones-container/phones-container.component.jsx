@@ -16,6 +16,7 @@ export const PhonesContainer = ({ phonesData }) => {
             key={index}
             phoneTitle={phone.name}
             image={phone.imageUrl}
+            price={phone.price}
           />
         ))
       )}

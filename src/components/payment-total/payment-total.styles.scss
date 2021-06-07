@@ -1,0 +1,29 @@
+.payment-total-container {
+  margin-top: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .payment-total-title {
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  .payment-total-amount {
+    font-size: 18px;
+  }
+
+  .payment-total-button {
+    padding: 15px;
+    color: white;
+    background-color: black;
+    width: 250px;
+    text-align: center;
+
+    &:hover {
+      color: black;
+      background-color: orange;
+    }
+  }
+}

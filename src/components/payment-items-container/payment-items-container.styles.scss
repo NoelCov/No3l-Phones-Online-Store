@@ -1,14 +1,19 @@
 .payment-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 900px;
 
   .payment-title {
     font-size: 25px;
-    align-self: center;
     margin-bottom: 30px;
     font-weight: 600;
+  }
+
+  .payment-empty-cart {
+    font-size: 14px;
+    margin-bottom: 10px;
   }
 
   .payment-info-container {
@@ -16,7 +21,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     background-color: #e0e0e0;
-    align-self: center;
 
     .info-property {
       text-align: center;

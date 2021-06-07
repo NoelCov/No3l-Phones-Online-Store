@@ -10,7 +10,7 @@ export const CartItem = ({ phoneName, phonePrice, quantity }) => {
       <span className="cart-property">{phoneName}</span>
       <span className="cart-property">${phonePrice}</span>
       <span className="cart-property">{quantity}</span>
-      <span className="cart-property">${total}</span>
+      <span className="cart-property">${total.toFixed(2)}</span>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import React from "react";
 
 import { auth, firestore } from "../../firebase/firebase.utils";
 
-export const PhoneContainer = ({ image, phoneTitle }) => {
+export const PhoneContainer = ({ image, phoneTitle, price }) => {
   
   const updateDocument = (userDocumentRef, counter) => {
     return userDocumentRef
@@ -12,6 +12,7 @@ export const PhoneContainer = ({ image, phoneTitle }) => {
         [`cart.${phoneTitle}`]: {
           quantity: counter,
           image: image,
+          price: price
         },
       })
       .then(() => {
