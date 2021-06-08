@@ -15,19 +15,21 @@ export const PaymentItemsContainer = ({ cart, onClick }) => {
       <span className="payment-empty-cart" onClick={onClick}>
         Empty Cart
       </span>
-      
+
       <div className="payment-info-container">
         <span className="info-property">Item</span>
         <span className="info-property">Price</span>
         <span className="info-property">Quantity</span>
         <span className="info-property">Total</span>
+        <span className="info-property">Delete Item</span>
       </div>
       <div className="cart-items-container">
-        {keys.map((item) => {
+        {keys.map((item, index) => {
           return (
             <CartItem
               phoneName={item}
               phonePrice={cart[item].price}
+              key={index}
               quantity={cart[item].quantity}
             />
           );

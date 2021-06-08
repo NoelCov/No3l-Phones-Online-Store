@@ -1,5 +1,5 @@
 .personalized-button {
-  background-color: #E6CE1D;
+  background-color: orange;
   padding: 15px 25px;
   width: 100%;
   display: flex;
@@ -11,7 +11,7 @@
 
   &:hover {
     transform: scale(1.05);
-    background-color: yellow;
+    background-color: white;
   }
 
   .icon {

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import SearchIcon from "@material-ui/icons/Search";
 
 import "./navbar.styles.scss";
 
@@ -15,8 +14,7 @@ export const NavBar = ({ currentUser }) => {
         <span className="navbar-title">No3l Phones Online Store</span>
       </Link>
       <div className="navbar-links-container">
-        <SearchIcon className="navbar-link" />
-        <Link to="/payment">
+        <Link to="/payment" >
           <ShoppingCartIcon className="navbar-link" />
         </Link>
         {currentUser ? (

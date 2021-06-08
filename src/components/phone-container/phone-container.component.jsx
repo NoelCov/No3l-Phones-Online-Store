@@ -1,18 +1,18 @@
 import "./phone-container.styles.scss";
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { auth, firestore } from "../../firebase/firebase.utils";
 
 export const PhoneContainer = ({ image, phoneTitle, price }) => {
-  
   const updateDocument = (userDocumentRef, counter) => {
     return userDocumentRef
       .update({
         [`cart.${phoneTitle}`]: {
           quantity: counter,
           image: image,
-          price: price
+          price: price,
         },
       })
       .then(() => {
@@ -25,7 +25,6 @@ export const PhoneContainer = ({ image, phoneTitle, price }) => {
 
   const handleClick = () => {
     const userDocumentRef = firestore.doc(`users/${auth.currentUser.uid}`);
-
     userDocumentRef.get().then((doc) => {
       if (doc.exists) {
         let counter = null;
@@ -49,10 +48,16 @@ export const PhoneContainer = ({ image, phoneTitle, price }) => {
       />
       <span className="phone-title">{phoneTitle}</span>
       <div className="content">
-        <span onClick={handleClick} className="content-item">
-          Buy this phone
-        </span>
-        <span className="content-item">View More</span>
+        {auth.currentUser !== null ? (
+          <span onClick={handleClick} className="content-item">
+            Buy this phone
+          </span>
+        ) : (
+          <Link to="signin">
+            <span className="content-item">Buy this phone</span>
+          </Link>
+        )}
+        <span className="content-item">{price.toFixed(2)}</span>
       </div>
     </div>
   );

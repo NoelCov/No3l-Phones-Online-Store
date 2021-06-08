@@ -44,7 +44,11 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/about" component={InformationPage} />
-            <Route exact path="/payment" component={PaymentPage} />
+            <Route
+              exact
+              path="/payment"
+              render={() => (currentUser ? <PaymentPage /> : <SignInPage />)}
+            />
             <Route
               exact
               path="/signin"

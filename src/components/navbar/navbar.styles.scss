@@ -15,7 +15,7 @@
 
     .navbar-link {
       font-size: 28px;
-      margin: 0 20px;
+      margin: 5px 20px 0;
     }
 
     .navbar-login-button {
@@ -27,7 +27,7 @@
       font-size: 16px;
 
       &:hover {
-        background-color: #E6CE1D;
+        background-color: orange;
         color: black;
       }
     }

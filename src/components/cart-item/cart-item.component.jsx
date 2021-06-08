@@ -2,7 +2,9 @@ import "./cart-item.styles.scss";
 
 import React from "react";
 
-export const CartItem = ({ phoneName, phonePrice, quantity }) => {
+import DeleteIcon from '@material-ui/icons/Delete';
+
+export const CartItem = ({ phoneName, phonePrice, quantity, onClick }) => {
   const total = phonePrice * quantity;
 
   return (
@@ -11,6 +13,7 @@ export const CartItem = ({ phoneName, phonePrice, quantity }) => {
       <span className="cart-property">${phonePrice}</span>
       <span className="cart-property">{quantity}</span>
       <span className="cart-property">${total.toFixed(2)}</span>
+      <span className="cart-property" onClick={onClick}><DeleteIcon /></span>
     </div>
   );
 };
