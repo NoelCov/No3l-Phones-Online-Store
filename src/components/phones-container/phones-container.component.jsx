@@ -3,7 +3,7 @@ import "./phones-container.styles.scss";
 import React from "react";
 import { Redirect } from "react-router";
 
-import { PhoneContainer } from "../phone-container/phone-container.component";
+import PhoneContainer from "../phone-container/phone-container.component";
 
 export const PhonesContainer = ({ phonesData }) => {
   return (

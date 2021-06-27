@@ -33,5 +33,11 @@
   .cart-items-container {
     width: 100%;
     margin: 5px 0;
+    text-align: center;
+
+    .empty-cart-text {
+      margin: 45px auto;
+      font-size: 20px;
+    }
   }
 }

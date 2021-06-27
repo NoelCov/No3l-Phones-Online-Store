@@ -7,7 +7,7 @@ import "./navbar.styles.scss";
 
 import { auth } from "../../firebase/firebase.utils";
 
-export const NavBar = ({ currentUser }) => {
+const NavBar = ({ currentUser }) => {
   return (
     <nav className="navbar">
       <Link to="/">
@@ -30,3 +30,5 @@ export const NavBar = ({ currentUser }) => {
     </nav>
   );
 };
+
+export default NavBar;

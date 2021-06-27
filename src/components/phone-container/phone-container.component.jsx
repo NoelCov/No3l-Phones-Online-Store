@@ -3,43 +3,12 @@ import "./phone-container.styles.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { auth, firestore } from "../../firebase/firebase.utils";
+import { auth } from "../../firebase/firebase.utils";
 
-export const PhoneContainer = ({ image, phoneTitle, price }) => {
-  const updateDocument = (userDocumentRef, counter) => {
-    return userDocumentRef
-      .update({
-        [`cart.${phoneTitle}`]: {
-          quantity: counter,
-          image: image,
-          price: price,
-        },
-      })
-      .then(() => {
-        console.log("Document was succesfully updated");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+import { connect } from "react-redux";
+import { addItem } from "../../redux/cart/cart.actions";
 
-  const handleClick = () => {
-    const userDocumentRef = firestore.doc(`users/${auth.currentUser.uid}`);
-    userDocumentRef.get().then((doc) => {
-      if (doc.exists) {
-        let counter = null;
-        const cartObj = doc.data().cart;
-        cartObj[phoneTitle]
-          ? (counter = cartObj[phoneTitle].quantity + 1)
-          : (counter = 1);
-
-        updateDocument(userDocumentRef, counter);
-      } else {
-        console.log("No such doc");
-      }
-    });
-  };
-
+const PhoneContainer = ({ image, phoneTitle, price, addItem }) => {
   return (
     <div className="phone-container">
       <div
@@ -49,7 +18,7 @@ export const PhoneContainer = ({ image, phoneTitle, price }) => {
       <span className="phone-title">{phoneTitle}</span>
       <div className="content">
         {auth.currentUser !== null ? (
-          <span onClick={handleClick} className="content-item">
+          <span onClick={() => addItem([phoneTitle, price])} className="content-item">
             Buy this phone
           </span>
         ) : (
@@ -62,3 +31,9 @@ export const PhoneContainer = ({ image, phoneTitle, price }) => {
     </div>
   );
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  addItem: (phone) => dispatch(addItem(phone)),
+});
+
+export default connect(null, mapDispatchToProps)(PhoneContainer);

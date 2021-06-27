@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import "./App.css";
+import "./App.scss";
 
-import { NavBar } from "./components/navbar/navbar.component";
+import NavBar from "./components/navbar/navbar.component";
 import { Footer } from "./components/footer/footer.component";
 import { HomePage } from "./pages/home-page/homepage.component";
 import { Phones } from "./pages/phones-page/phones-page.component";
