@@ -2,7 +2,7 @@ import React from "react";
 
 import "./payment-items-container.styles.scss";
 
-import { CartItem } from "../cart-item/cart-item.component";
+import CartItem from "../cart-item/cart-item.component";
 
 import { connect } from "react-redux";
 
@@ -40,6 +40,7 @@ const PaymentItemsContainer = ({ cartItems, emptyCart, deleteItem }) => {
                 phoneName={currentItem.phoneTitle}
                 phonePrice={currentItem.price}
                 quantity={currentItem.quantity}
+                phone={currentItem}
                 onClick={() => deleteItem(currentItem.phoneTitle)}
               />
             );

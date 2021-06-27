@@ -8,17 +8,22 @@ import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cart.actions";
 
-const PhoneContainer = ({ image, phoneTitle, price, addItem }) => {
+const PhoneContainer = ({ phone, addItem }) => {
+  const { imageUrl, phoneTitle, price } = phone;
+
   return (
     <div className="phone-container">
       <div
         className="phone-image"
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ backgroundImage: `url(${imageUrl})` }}
       />
       <span className="phone-title">{phoneTitle}</span>
       <div className="content">
         {auth.currentUser !== null ? (
-          <span onClick={() => addItem([phoneTitle, price])} className="content-item">
+          <span
+            onClick={() => addItem(phone)}
+            className="content-item"
+          >
             Buy this phone
           </span>
         ) : (

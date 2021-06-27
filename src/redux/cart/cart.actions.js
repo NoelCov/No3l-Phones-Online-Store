@@ -18,3 +18,8 @@ export const deleteItem = (item) => ({
     payload: item
 });
 
+export const decreaseItem = (item) => ({
+    type: cartActionTypes.DECREASE_ITEM,
+    payload: item
+});
+

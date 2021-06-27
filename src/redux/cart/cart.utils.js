@@ -1,16 +1,17 @@
 export const addItemToCart = (cartItems, cartItemToAdd) => {
-  const phone = cartItemToAdd[0];
+  const phoneTitle = cartItemToAdd.phoneTitle;
+  const price = cartItemToAdd.price;
 
-  if (!cartItems[phone]) {
-    cartItems[phone] = {
-      price: cartItemToAdd[1],
+  if (!cartItems[phoneTitle]) {
+    cartItems[phoneTitle] = {
+      price: price,
       quantity: 1,
-      phoneTitle: phone,
+      phoneTitle: phoneTitle,
     };
-  } else {
-    cartItems[phone].quantity += 1;
+  } else if (cartItems[phoneTitle]) {
+    cartItems[phoneTitle].quantity += 1;
   }
-  return {...cartItems};
+  return { ...cartItems };
 };
 
 export const getCartTotal = (cartItems) => {
@@ -25,5 +26,15 @@ export const getCartTotal = (cartItems) => {
 
 export const deleteItem = (cartItems, cartItemToDelete) => {
   delete cartItems[cartItemToDelete];
-  return {...cartItems};
+  return { ...cartItems };
+};
+
+export const decreaseItem = (cartItems, cartItemToDecrease) => {
+  if (cartItems[cartItemToDecrease].quantity > 1) {
+    cartItems[cartItemToDecrease].quantity -= 1;
+    return { ...cartItems };
+  } else {
+    delete cartItems[cartItemToDecrease];
+    return { ...cartItems };
+  }
 };

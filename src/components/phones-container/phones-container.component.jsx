@@ -14,9 +14,7 @@ export const PhonesContainer = ({ phonesData }) => {
         phonesData.map((phone, index) => (
           <PhoneContainer
             key={index}
-            phoneTitle={phone.name}
-            image={phone.imageUrl}
-            price={phone.price}
+            phone={phone}
           />
         ))
       )}
