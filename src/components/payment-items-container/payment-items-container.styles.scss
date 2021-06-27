@@ -15,29 +15,4 @@
     font-size: 14px;
     margin-bottom: 10px;
   }
-
-  .payment-info-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    background-color: #e0e0e0;
-
-    .info-property {
-      text-align: center;
-      font-size: 18px;
-      font-weight: 500;
-      padding: 8px 0;
-    }
-  }
-
-  .cart-items-container {
-    width: 100%;
-    margin: 5px 0;
-    text-align: center;
-
-    .empty-cart-text {
-      margin: 45px auto;
-      font-size: 20px;
-    }
-  }
 }

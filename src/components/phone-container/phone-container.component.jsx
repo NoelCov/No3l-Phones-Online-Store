@@ -20,10 +20,7 @@ const PhoneContainer = ({ phone, addItem }) => {
       <span className="phone-title">{phoneTitle}</span>
       <div className="content">
         {auth.currentUser !== null ? (
-          <span
-            onClick={() => addItem(phone)}
-            className="content-item"
-          >
+          <span onClick={() => addItem(phone)} className="content-item">
             Buy this phone
           </span>
         ) : (

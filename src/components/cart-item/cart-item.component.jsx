@@ -11,9 +11,8 @@ import { connect } from "react-redux";
 import { addItem, decreaseItem } from "../../redux/cart/cart.actions";
 
 const CartItem = ({ phone, onClick, increaseItem, decreaseItem }) => {
-  const { phoneTitle, price, quantity } = phone; 
+  const { phoneTitle, price, quantity } = phone;
   const total = price * quantity;
-
 
   return (
     <div className="cart-item">

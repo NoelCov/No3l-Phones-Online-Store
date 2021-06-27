@@ -4,7 +4,6 @@ import { generatePath, withRouter } from "react-router";
 import "./logo-container.styles.scss";
 
 const LogoContainer = ({ imageUrl, brand, history }) => {
-
   const handleClick = () => {
     // Generate the url for the user
     const url = generatePath("/:brand", {

@@ -14,7 +14,7 @@ const NavBar = ({ currentUser }) => {
         <span className="navbar-title">No3l Phones Online Store</span>
       </Link>
       <div className="navbar-links-container">
-        <Link to="/payment" >
+        <Link to="/payment">
           <ShoppingCartIcon className="navbar-link" />
         </Link>
         {currentUser ? (

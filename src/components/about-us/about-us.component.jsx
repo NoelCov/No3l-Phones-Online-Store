@@ -10,7 +10,7 @@ import { PersonalizedContainer } from "../personalized-container/personalized-co
 
 export const AboutUs = () => {
   return (
-    <PersonalizedContainer>
+    <PersonalizedContainer className="personalized-container">
       <div className="about-us-container">
         <div className="about-us-lorem-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -30,9 +30,7 @@ export const AboutUs = () => {
           Massa placerat duis ultricies lacus sed turpis tincidunt. Ultricies mi
           quis hendrerit dolor magna eget est.
         </div>
-        <div className="about-us-title">
-          Follow "No3l Codes" on Social Media
-        </div>
+        <div className="about-us-title">Follow Me on Social Media</div>
         <div className="about-us-icons-container">
           <a href="https://github.com/NoelCov" target="blank">
             <GitHubIcon className="icon" />

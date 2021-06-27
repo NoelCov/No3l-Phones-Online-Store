@@ -12,10 +12,7 @@ export const PhonesContainer = ({ phonesData }) => {
         <Redirect to="/" />
       ) : (
         phonesData.map((phone, index) => (
-          <PhoneContainer
-            key={index}
-            phone={phone}
-          />
+          <PhoneContainer key={index} phone={phone} />
         ))
       )}
     </div>

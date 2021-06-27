@@ -2,13 +2,13 @@ import React from "react";
 
 import "./payment-items-container.styles.scss";
 
-import CartItem from "../cart-item/cart-item.component";
-
 import { connect } from "react-redux";
+import { deleteAll } from "../../redux/cart/cart.actions";
 
-import { deleteAll, deleteItem } from "../../redux/cart/cart.actions";
+import CartItemsContainer from "../cart-items-container/cart-items-container.component";
+import PaymentInformationContainer from "../payment-information-container/payment-information-container.component";
 
-const PaymentItemsContainer = ({ cartItems, emptyCart, deleteItem }) => {
+const PaymentItemsContainer = ({ cartItems, emptyCart }) => {
   const keys = Object.keys(cartItems);
 
   return (
@@ -22,40 +22,14 @@ const PaymentItemsContainer = ({ cartItems, emptyCart, deleteItem }) => {
         </span>
       ) : null}
 
-      <div className="payment-info-container">
-        <span className="info-property">Item</span>
-        <span className="info-property">Price</span>
-        <span className="info-property">Quantity</span>
-        <span className="info-property">Total</span>
-        <span className="info-property">Delete Item</span>
-      </div>
-      <div className="cart-items-container">
-        {keys.length ? (
-          keys.map((item, index) => {
-            const currentItem = cartItems[item];
-
-            return (
-              <CartItem
-                key={index}
-                phoneName={currentItem.phoneTitle}
-                phonePrice={currentItem.price}
-                quantity={currentItem.quantity}
-                phone={currentItem}
-                onClick={() => deleteItem(currentItem.phoneTitle)}
-              />
-            );
-          })
-        ) : (
-          <p className="empty-cart-text">CART IS EMPTY</p>
-        )}
-      </div>
+      <PaymentInformationContainer />
+      <CartItemsContainer keys={keys} cartItems={cartItems} />
     </div>
   );
 };
 
 const mapDispatchToProps = (dispatch) => ({
   emptyCart: () => dispatch(deleteAll()),
-  deleteItem: (item) => dispatch(deleteItem(item)),
 });
 
 export default connect(null, mapDispatchToProps)(PaymentItemsContainer);

@@ -7,19 +7,12 @@ export const Footer = () => {
   return (
     <div className="footer">
       <Link to="/about">
-        {" "}
-        <span
-          onClick={() => console.log("About us page")}
-          className="footer-link"
-        >
-          Customer Service
-        </span>
+        <span className="footer-link">Customer Service</span>
       </Link>
       <Link to="/about">
         <span className="footer-link">FAQ</span>
       </Link>
       <Link to="/about">
-        {" "}
         <span className="footer-link">About us</span>
       </Link>
     </div>

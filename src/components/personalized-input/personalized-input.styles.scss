@@ -2,7 +2,7 @@
   height: 40px;
   text-align: center;
   border: none;
-  background-color: #d3d3d3;
+  background-color: white;
   color: black;
   width: 100%;
   font-size: 16px;
@@ -13,5 +13,6 @@
 
   &::placeholder {
     color: black;
+    opacity: 0.8;
   }
 }
