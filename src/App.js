@@ -6,7 +6,7 @@ import "./App.scss";
 import NavBar from "./components/navbar/navbar.component";
 import { Footer } from "./components/footer/footer.component";
 import { HomePage } from "./pages/home-page/homepage.component";
-import { Phones } from "./pages/phones-page/phones-page.component";
+import { PhonesPage } from "./pages/phones-page/phones-page.component";
 import { InformationPage } from "./pages/information-page/information-page.component";
 import { SignInPage } from "./pages/sign-in-page/sign-in-page.component";
 import PaymentPage from "./pages/payment-page/payment-page.component";
@@ -54,7 +54,7 @@ export default class App extends Component {
               path="/signin"
               render={() => (currentUser ? <HomePage /> : <SignInPage />)}
             />
-            <Route path="/" component={Phones} />
+            <Route path="/" component={PhonesPage} />
           </Switch>
         </div>
         <Footer />

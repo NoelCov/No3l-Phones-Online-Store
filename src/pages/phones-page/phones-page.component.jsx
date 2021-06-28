@@ -4,9 +4,15 @@ import data from "../../data";
 
 import { PhonesContainer } from "../../components/phones-container/phones-container.component";
 
+import "./phones-page.styles.scss";
+
 var trimStart = require("lodash/trimStart");
 
-export const Phones = ({ location }) => {
+export const PhonesPage = ({ location }) => {
   const brandName = trimStart(location.pathname, "/");
-  return <PhonesContainer phonesData={data[brandName]} />;
+  return (
+    <div className="phones-page">
+      <PhonesContainer phonesData={data[brandName]} />
+    </div>
+  );
 };
