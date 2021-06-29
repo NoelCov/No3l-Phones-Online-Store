@@ -6,7 +6,13 @@
 
 @media screen and (max-width: 800px) {
   .personalized-container {
-    max-width: 80%;
     margin: 40px auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .personalized-container {
+    width: 90%;
+    margin: auto;
   }
 }

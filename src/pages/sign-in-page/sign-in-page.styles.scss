@@ -12,3 +12,12 @@
     grid-template-rows: 1fr 1fr;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .signInPage {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+    gap: 40px;
+  }
+}

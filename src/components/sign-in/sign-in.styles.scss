@@ -32,3 +32,14 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .sign-in-container {
+    .sign-in-title {
+      font-size: 20px;
+    }
+    .personalized-form {
+      gap: 15px;
+    }
+  }
+}

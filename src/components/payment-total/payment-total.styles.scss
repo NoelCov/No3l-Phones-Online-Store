@@ -27,3 +27,24 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .payment-total-container {
+    margin-top: 50px;
+    gap: 10px;
+
+    .payment-total-title {
+      font-size: 18px;
+    }
+
+    .payment-total-amount {
+      font-size: 15px;
+    }
+
+    .payment-total-button {
+      padding: 10px;
+      width: 160px;
+      font-size: 14px;
+    }
+  }
+}

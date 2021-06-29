@@ -12,3 +12,9 @@
     margin: 100px 30px 295px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .payment-page {
+    margin: 80px 20px 0;
+  }
+}

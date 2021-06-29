@@ -23,3 +23,10 @@
     width: 80%;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .input {
+    height: 28px;
+    font-size: 14px;
+  }
+}

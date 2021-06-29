@@ -19,3 +19,11 @@
     padding: 0 10px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .payment-information-container {
+    .info-property {
+      font-size: 12px;
+    }
+  }
+}

@@ -9,3 +9,9 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .phones-container {
+    gap: 50px;
+  }
+}

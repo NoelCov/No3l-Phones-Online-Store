@@ -22,3 +22,16 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .payment-container {
+    .payment-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .payment-empty-cart {
+      font-size: 12px;
+    }
+  }
+}

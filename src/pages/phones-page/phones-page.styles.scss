@@ -4,3 +4,9 @@
   justify-content: center;
   margin: 5rem auto;
 }
+
+@media screen and (max-width: 480px) {
+  .phones-page {
+    margin: auto 10px 45px;
+  }
+}
