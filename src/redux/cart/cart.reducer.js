@@ -41,9 +41,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         cartItems: decreaseItem(state.cartItems, action.payload),
       };
     default:
-      return {
-        ...state,
-      };
+      return state;
   }
 };
 
