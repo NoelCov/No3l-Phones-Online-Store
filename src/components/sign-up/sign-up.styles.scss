@@ -20,3 +20,14 @@
     width: 400px;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .sign-up-container {
+    max-width: 100%;
+
+    .personalized-form {
+      max-width: 100%;
+      gap: 20px;
+    }
+  }
+}

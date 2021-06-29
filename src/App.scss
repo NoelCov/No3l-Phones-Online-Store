@@ -1,13 +1,13 @@
 body {
   font-family: "Saira", sans-serif;
   overflow-x: hidden;
-  min-height: 100vh;
+  min-height: 95%;
 
   a {
     text-decoration: none;
     color: black;
   }
-  
+
   .page-content {
     display: flex;
     flex-direction: column;
@@ -15,3 +15,10 @@ body {
   }
 }
 
+@media screen and (max-width: 800px) {
+  body {
+    .page-content {
+      max-height: 95%;
+    }
+  }
+}

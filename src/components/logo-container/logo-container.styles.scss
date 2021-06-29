@@ -5,3 +5,9 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .logo-container {
+    margin: 15px 0;
+  }
+}

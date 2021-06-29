@@ -5,3 +5,10 @@
   align-items: center;
   margin: 80px 60px;
 }
+
+@media screen and (max-width: 800px) {
+  .payment-page {
+    min-height: 100%;
+    margin: 100px 30px 295px;
+  }
+}

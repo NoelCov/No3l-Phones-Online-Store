@@ -1,5 +1,11 @@
 .phones-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 65px;
+  gap: 100px;
+}
+
+@media screen and (max-width: 800px) {
+  .phones-container {
+    grid-template-columns: 1fr 1fr;
+  }
 }

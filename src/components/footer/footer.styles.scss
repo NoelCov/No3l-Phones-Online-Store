@@ -11,3 +11,10 @@
     font-weight: 500;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .footer {
+    max-height: 20px;
+    padding: 20px 0 0;
+  }
+}

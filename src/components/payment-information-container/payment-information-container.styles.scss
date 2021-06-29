@@ -3,11 +3,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   background-color: #e0e0e0;
+  align-content: center;
 
   .info-property {
     text-align: center;
     font-size: 18px;
     font-weight: 500;
     padding: 8px 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .payment-information-container {
+    width: 100%;
+    padding: 0 10px;
   }
 }

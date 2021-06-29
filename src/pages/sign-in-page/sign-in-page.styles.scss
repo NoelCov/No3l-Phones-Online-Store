@@ -4,3 +4,11 @@
   gap: 20px;
   padding: 75px 40px;
 }
+
+@media screen and (max-width: 800px) {
+  .signInPage {
+    padding: 20px 10px;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+  }
+}
