@@ -8,10 +8,14 @@ import { PaymentTotal } from "../../components/payment-total/payment-total.compo
 
 import { getTotal } from "../../redux/cart/cart.actions";
 
+import { selectCartItems, selectTotal } from "../../redux/cart/cart.selectors";
+
+import { createStructuredSelector } from "reselect";
+
 const PaymentPage = ({ cartItems, total, dispatch }) => {
   useEffect(() => {
     dispatch(getTotal());
-  })
+  });
 
   return (
     <div className="payment-page">
@@ -21,9 +25,9 @@ const PaymentPage = ({ cartItems, total, dispatch }) => {
   );
 };
 
-const mapStateToProps = ({ cart: { cartItems, total } }) => ({
-  cartItems: cartItems,
-  total: total,
+const mapStateToProps = createStructuredSelector ({
+  cartItems: selectCartItems,
+  total: selectTotal,
 });
 
 export default connect(mapStateToProps)(PaymentPage);
