@@ -5,6 +5,7 @@ import {
   getCartTotal,
   deleteItem,
   decreaseItem,
+  getItemCount
 } from "./cart.utils";
 
 const INITIAL_STATE = {

@@ -15,8 +15,15 @@
     align-items: center;
 
     .navbar-link {
+      align-self: flex-end;
+      margin-top: 15px;
       font-size: 28px;
-      margin: 5px 20px 0;
+    }
+
+    .item-counter {
+      position: absolute;
+      top: 1px;
+      margin-left: 4px;
     }
 
     .navbar-login-button {

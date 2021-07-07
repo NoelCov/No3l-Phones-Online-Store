@@ -7,7 +7,10 @@ import "./navbar.styles.scss";
 
 import { auth } from "../../firebase/firebase.utils";
 
-const NavBar = ({ currentUser }) => {
+import { selectItemCount } from "../../redux/cart/cart.selectors";
+import { connect } from "react-redux";
+
+const NavBar = ({ currentUser, itemCount }) => {
   return (
     <nav className="navbar">
       <Link to="/">
@@ -15,6 +18,7 @@ const NavBar = ({ currentUser }) => {
       </Link>
       <div className="navbar-links-container">
         <Link to="/payment">
+          <span className="item-counter">{itemCount > 0 ? itemCount : null}</span>
           <ShoppingCartIcon className="navbar-link" />
         </Link>
         {currentUser ? (
@@ -31,4 +35,8 @@ const NavBar = ({ currentUser }) => {
   );
 };
 
-export default NavBar;
+const mapStateToProps = (state) => ({
+  itemCount: selectItemCount(state),
+});
+
+export default connect(mapStateToProps)(NavBar);
