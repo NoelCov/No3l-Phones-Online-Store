@@ -1,7 +1,7 @@
 import React from "react";
 import { generatePath, withRouter } from "react-router";
 
-import "./logo-container.styles.scss";
+import { ContainerLogo, ImageContainer } from "./logo-container.styles";
 
 const LogoContainer = ({ imageUrl, brand, history }) => {
   const handleClick = () => {
@@ -13,9 +13,9 @@ const LogoContainer = ({ imageUrl, brand, history }) => {
   };
 
   return (
-    <div className="logo-container" onClick={handleClick}>
-      <img className="logo-img" src={imageUrl} alt="company logo" />
-    </div>
+    <ContainerLogo onClick={handleClick}>
+      <ImageContainer src={imageUrl} alt="company logo" />
+    </ContainerLogo>
   );
 };
 

@@ -1,37 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-
-import "./navbar.styles.scss";
+import { connect } from "react-redux";
 
 import { auth } from "../../firebase/firebase.utils";
 
 import { selectItemCount } from "../../redux/cart/cart.selectors";
-import { connect } from "react-redux";
+
+import {
+  NavBarContainer,
+  NavBarItemCounterContainer,
+  NavBarTitleContainer,
+  NavBarLinksContainer,
+  NavBarShoppingCartIconContainer,
+  NavBarLoginButtonContainer,
+} from "./navbar.styles";
 
 const NavBar = ({ currentUser, itemCount }) => {
   return (
-    <nav className="navbar">
+    <NavBarContainer>
       <Link to="/">
-        <span className="navbar-title">No3l Phones Online Store</span>
+        <NavBarTitleContainer>No3l Phones Online Store</NavBarTitleContainer>
       </Link>
-      <div className="navbar-links-container">
+      <NavBarLinksContainer>
         <Link to="/payment">
-          <span className="item-counter">{itemCount > 0 ? itemCount : null}</span>
-          <ShoppingCartIcon className="navbar-link" />
+          <NavBarItemCounterContainer>
+            {itemCount > 0 ? itemCount : null}
+          </NavBarItemCounterContainer>
+          <NavBarShoppingCartIconContainer />
         </Link>
         {currentUser ? (
-          <span className="navbar-login-button" onClick={() => auth.signOut()}>
+          <NavBarLoginButtonContainer onClick={() => auth.signOut()}>
             Sign Out
-          </span>
+          </NavBarLoginButtonContainer>
         ) : (
           <Link to="/signin">
-            <span className="navbar-login-button">Sign In</span>
+            <NavBarLoginButtonContainer>Sign In</NavBarLoginButtonContainer>
           </Link>
         )}
-      </div>
-    </nav>
+      </NavBarLinksContainer>
+    </NavBarContainer>
   );
 };
 

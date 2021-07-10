@@ -1,20 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./footer.styles.scss";
+import { FooterContainer, FooterLinkContainer } from "./footer.styles";
 
 export const Footer = () => {
   return (
-    <div className="footer">
+    <FooterContainer>
       <Link to="/about">
-        <span className="footer-link">Customer Service</span>
+        <FooterLinkContainer>Customer Service</FooterLinkContainer>
       </Link>
       <Link to="/about">
-        <span className="footer-link">FAQ</span>
+        <FooterLinkContainer>FAQ</FooterLinkContainer>
       </Link>
       <Link to="/about">
-        <span className="footer-link">About us</span>
+        <FooterLinkContainer>About us</FooterLinkContainer>
       </Link>
-    </div>
+    </FooterContainer>
   );
 };

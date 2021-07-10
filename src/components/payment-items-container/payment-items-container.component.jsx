@@ -1,30 +1,34 @@
 import React from "react";
 
-import "./payment-items-container.styles.scss";
-
 import { connect } from "react-redux";
 import { deleteAll } from "../../redux/cart/cart.actions";
 
 import CartItemsContainer from "../cart-items-container/cart-items-container.component";
 import PaymentInformationContainer from "../payment-information-container/payment-information-container.component";
 
+import {
+  PaymentContainer,
+  PaymentTitleContainer,
+  EmptyCartTextContainer,
+} from "./payment-items-container.styles";
+
 const PaymentItemsContainer = ({ cartItems, emptyCart }) => {
   const keys = Object.keys(cartItems);
 
   return (
-    <div className="payment-container">
-      <span className="payment-title">CART</span>
+    <PaymentContainer>
+      <PaymentTitleContainer>CART</PaymentTitleContainer>
 
       {/* This text empties the user's cart when clicked. */}
       {keys.length ? (
-        <span className="payment-empty-cart" onClick={() => emptyCart()}>
+        <EmptyCartTextContainer onClick={() => emptyCart()}>
           Empty Cart
-        </span>
+        </EmptyCartTextContainer>
       ) : null}
 
       <PaymentInformationContainer />
       <CartItemsContainer keys={keys} cartItems={cartItems} />
-    </div>
+    </PaymentContainer>
   );
 };
 
