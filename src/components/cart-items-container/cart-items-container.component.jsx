@@ -1,16 +1,18 @@
 import React from "react";
-
-import "./cart-items-container.styles.scss";
+import { connect } from "react-redux";
 
 import CartItem from "../cart-item/cart-item.component";
 
 import { deleteItem } from "../../redux/cart/cart.actions";
 
-import { connect } from "react-redux";
+import {
+  CartItems,
+  EmptyCartTextContainer,
+} from "./cart-items-container.styles";
 
 const CartItemsContainer = ({ keys, cartItems, deleteItem }) => {
   return (
-    <div className="cart-items-container">
+    <CartItems>
       {keys.length ? (
         keys.map((item, index) => {
           const currentItem = cartItems[item];
@@ -27,9 +29,9 @@ const CartItemsContainer = ({ keys, cartItems, deleteItem }) => {
           );
         })
       ) : (
-        <p className="empty-cart-text">CART IS EMPTY</p>
+        <EmptyCartTextContainer>CART IS EMPTY</EmptyCartTextContainer>
       )}
-    </div>
+    </CartItems>
   );
 };
 

@@ -1,33 +1,36 @@
-import "./cart-item.styles.scss";
-
 import React from "react";
-
-import DeleteIcon from "@material-ui/icons/Delete";
-import AddIcon from "@material-ui/icons/Add";
-import RemoveIcon from "@material-ui/icons/Remove";
-
 import { connect } from "react-redux";
 
+import DeleteIcon from "@material-ui/icons/Delete";
+
 import { addItem, decreaseItem } from "../../redux/cart/cart.actions";
+
+import {
+  CartItemContainer,
+  CartProperty,
+  CartPropertyQuantity,
+  RemoveIconContainer,
+  AddIconContainer,
+} from "./cart-item.styles";
 
 const CartItem = ({ phone, onClick, increaseItem, decreaseItem }) => {
   const { phoneTitle, price, quantity } = phone;
   const total = price * quantity;
 
   return (
-    <div className="cart-item">
-      <span className="cart-property">{phoneTitle}</span>
-      <span className="cart-property">${price}</span>
-      <span className="cart-property-quantity">
-        <RemoveIcon className="icon" onClick={() => decreaseItem(phoneTitle)} />
+    <CartItemContainer>
+      <CartProperty>{phoneTitle}</CartProperty>
+      <CartProperty>${price}</CartProperty>
+      <CartPropertyQuantity>
+        <RemoveIconContainer onClick={() => decreaseItem(phoneTitle)} />
         {quantity}
-        <AddIcon className="icon" onClick={() => increaseItem(phone)} />
-      </span>
-      <span className="cart-property">${total.toFixed(2)}</span>
-      <span className="cart-property" onClick={onClick}>
+        <AddIconContainer onClick={() => increaseItem(phone)} />
+      </CartPropertyQuantity>
+      <CartProperty>${total.toFixed(2)}</CartProperty>
+      <CartProperty onClick={onClick}>
         <DeleteIcon />
-      </span>
-    </div>
+      </CartProperty>
+    </CartItemContainer>
   );
 };
 
