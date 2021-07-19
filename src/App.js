@@ -47,7 +47,7 @@ export default class App extends Component {
             <Route
               exact
               path="/payment"
-              render={() => (currentUser ? <PaymentPage /> : <SignInPage />)}
+              component={PaymentPage}
             />
             <Route
               exact

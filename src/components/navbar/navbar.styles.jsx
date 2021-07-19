@@ -4,33 +4,22 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 export const NavBarContainer = styled.nav`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
-
-  @media screen and (max-width: 480px) {
-    padding: 0 5px;
-  }
+  padding: 1vh 1.5vw;
 `;
 
 export const NavBarTitleContainer = styled.span`
-  font-size: 22px;
+  font-size: 26px;
 
   @media screen and (max-width: 480px) {
-    padding: 0 5px;
     font-size: 16px;
   }
 `;
 
 export const NavBarLinksContainer = styled.div`
-  width: 50%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-ay
-  @media screen and (max-width: 480px) {
-    width: 40%;
-  }
+  margin-left: auto;
 `;
 
 export const NavBarItemCounterContainer = styled.span`
@@ -39,18 +28,18 @@ export const NavBarItemCounterContainer = styled.span`
   margin-left: 4px;
 
   @media screen and (max-width: 480px) {
-    right: 29.5%;
+    right: 25.5%;
     top: 0;
   }
 `;
 
 export const NavBarShoppingCartIconContainer = styled(ShoppingCartIcon)`
   align-self: flex-end;
-  margin-top: 15px;
-  font-size: 28px;
+  margin-top: 1.6vh;
 
   @media screen and (max-width: 480px) {
-    font-size: 22px;
+    font-size: 10px;
+    margin-top: 1.2vh;
   }
 `;
 

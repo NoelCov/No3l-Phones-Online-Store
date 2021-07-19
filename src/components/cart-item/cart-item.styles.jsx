@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import DeleteIcon from "@material-ui/icons/Delete";
+
 import RemoveIcon from "@material-ui/icons/Remove";
 import AddIcon from "@material-ui/icons/Add";
 
@@ -46,8 +48,14 @@ const IconStyles = css`
 
 export const RemoveIconContainer = styled(RemoveIcon)`
   ${IconStyles}
+  cursor: pointer;
 `;
 
 export const AddIconContainer = styled(AddIcon)`
   ${AddIcon}
+  cursor: pointer;
+`;
+
+export const DeleteIconContainer = styled(DeleteIcon)`
+  cursor: pointer;
 `;

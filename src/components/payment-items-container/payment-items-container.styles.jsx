@@ -27,6 +27,7 @@ export const PaymentTitleContainer = styled.span`
 export const EmptyCartTextContainer = styled.span`
   font-size: 14px;
   margin-bottom: 10px;
+  cursor: pointer;
 
   @media screen and (max-width: 480px) {
     font-size: 12px;

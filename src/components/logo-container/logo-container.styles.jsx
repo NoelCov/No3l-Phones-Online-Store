@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ContainerLogo = styled.div`
   margin: 40px 0;
+  cursor: pointer;
 
   @media screen and (max-width: 800px) {
     margin: 15px 0;

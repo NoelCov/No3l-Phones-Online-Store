@@ -1,14 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import DeleteIcon from "@material-ui/icons/Delete";
-
 import { addItem, decreaseItem } from "../../redux/cart/cart.actions";
 
 import {
   CartItemContainer,
   CartProperty,
   CartPropertyQuantity,
+  DeleteIconContainer,
   RemoveIconContainer,
   AddIconContainer,
 } from "./cart-item.styles";
@@ -28,7 +27,7 @@ const CartItem = ({ phone, onClick, increaseItem, decreaseItem }) => {
       </CartPropertyQuantity>
       <CartProperty>${total.toFixed(2)}</CartProperty>
       <CartProperty onClick={onClick}>
-        <DeleteIcon />
+        <DeleteIconContainer />
       </CartProperty>
     </CartItemContainer>
   );
