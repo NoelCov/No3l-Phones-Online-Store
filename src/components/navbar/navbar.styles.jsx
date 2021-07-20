@@ -28,7 +28,7 @@ export const NavBarItemCounterContainer = styled.span`
   margin-left: 4px;
 
   @media screen and (max-width: 480px) {
-    right: 25.5%;
+    right: 20.5%;
     top: 0;
   }
 `;
@@ -47,7 +47,7 @@ export const NavBarLoginButtonContainer = styled.span`
   padding: 4px 20px;
   background-color: #161616;
   color: white;
-  margin: auto 15px;
+  margin-left: 1vw;
   border-radius: 4px;
   font-size: 16px;
 

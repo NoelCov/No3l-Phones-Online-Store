@@ -1,12 +1,15 @@
-import "./personalized-button.styles.scss";
-
 import React from "react";
 
-export const PersonalizedButton = ({ text, icon, onClick}) => {
+import {
+  PersonalizedButtonContainer,
+  Icon,
+} from "./personalized-button.styles";
+
+export const PersonalizedButton = ({ text, icon, onClick }) => {
   return (
-    <button className="personalized-button" onClick={onClick}>
-      <span className={icon && "icon"}>{icon}</span>
+    <PersonalizedButtonContainer onClick={onClick}>
+      <Icon>{icon}</Icon>
       {text}
-    </button>
+    </PersonalizedButtonContainer>
   );
 };

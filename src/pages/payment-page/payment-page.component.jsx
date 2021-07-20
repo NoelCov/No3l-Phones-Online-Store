@@ -1,5 +1,3 @@
-import "./payment-page.styles.scss";
-
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
@@ -12,20 +10,22 @@ import { selectCartItems, selectTotal } from "../../redux/cart/cart.selectors";
 
 import { createStructuredSelector } from "reselect";
 
+import { PaymentPageContainer } from "./payment-page.styles";
+
 const PaymentPage = ({ cartItems, total, dispatch }) => {
   useEffect(() => {
     dispatch(getTotal());
   });
 
   return (
-    <div className="payment-page">
+    <PaymentPageContainer>
       <PaymentItemsContainer cartItems={cartItems} />
       <PaymentTotal total={total} />
-    </div>
+    </PaymentPageContainer>
   );
 };
 
-const mapStateToProps = createStructuredSelector ({
+const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
   total: selectTotal,
 });

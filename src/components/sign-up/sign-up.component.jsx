@@ -1,5 +1,3 @@
-import "./sign-up.styles.scss";
-
 import React, { Component } from "react";
 
 import { PersonalizedContainer } from "../personalized-container/personalized-container.component";
@@ -7,6 +5,12 @@ import { PersonalizedInput } from "../personalized-input/personalized-input.comp
 import { PersonalizedButton } from "../personalized-button/personalized-button.component";
 
 import { auth, createUser } from "../../firebase/firebase.utils";
+
+import {
+  SignUpContainer,
+  SignUpTitleContainer,
+  PersonalizedFormContainer,
+} from "./sign-up.styles";
 
 export default class SignUp extends Component {
   constructor() {
@@ -43,10 +47,9 @@ export default class SignUp extends Component {
 
     return (
       <PersonalizedContainer>
-        <div className="sign-up-container">
-          <span className="sign-up-title">CREATE ACCOUNT</span>
-          <form
-            className="personalized-form"
+        <SignUpContainer>
+          <SignUpTitleContainer>CREATE ACCOUNT</SignUpTitleContainer>
+          <PersonalizedFormContainer
             onSubmit={(event) => event.preventDefault()}
           >
             <PersonalizedInput
@@ -80,8 +83,8 @@ export default class SignUp extends Component {
                 this.handleSubmit(email, password, name);
               }}
             />
-          </form>
-        </div>
+          </PersonalizedFormContainer>
+        </SignUpContainer>
       </PersonalizedContainer>
     );
   }

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import "./sign-in.styles.scss";
-
 import { PersonalizedContainer } from "../personalized-container/personalized-container.component";
 import { PersonalizedInput } from "../personalized-input/personalized-input.component";
 import { PersonalizedButton } from "../personalized-button/personalized-button.component";
@@ -13,6 +11,12 @@ import {
   auth,
   createUser,
 } from "../../firebase/firebase.utils";
+
+import {
+  SignInContainer,
+  SignInTitleContainer,
+  PersonalizedFormContainer,
+} from "./sign-in.styles";
 
 export default class SignIn extends Component {
   constructor() {
@@ -47,10 +51,9 @@ export default class SignIn extends Component {
 
     return (
       <PersonalizedContainer>
-        <div className="sign-in-container">
-          <span className="sign-in-title">SIGN IN</span>
-          <form
-            className="personalized-form"
+        <SignInContainer>
+          <SignInTitleContainer>SIGN IN</SignInTitleContainer>
+          <PersonalizedFormContainer
             onSubmit={(event) => event.preventDefault()}
           >
             <PersonalizedInput
@@ -79,8 +82,8 @@ export default class SignIn extends Component {
               text="Sign In with Google"
               icon={<GrGoogle />}
             />
-          </form>
-        </div>
+          </PersonalizedFormContainer>
+        </SignInContainer>
       </PersonalizedContainer>
     );
   }

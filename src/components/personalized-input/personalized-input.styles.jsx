@@ -1,9 +1,11 @@
-.input {
-  height: 40px;
+import styled from "styled-components";
+
+export const PersonalizedInputContainer = styled.input`
+  height: 4vh;
   text-align: center;
   border: none;
   background-color: white;
-  color: black;
+  color: gray;
   width: 100%;
   font-size: 16px;
 
@@ -18,15 +20,9 @@
 }
 
 @media screen and (max-width: 800px) {
-  .input {
-    height: 35px;
     width: 80%;
-  }
 }
 
 @media screen and (max-width: 480px) {
-  .input {
-    height: 28px;
     font-size: 14px;
-  }
-}
+}`;

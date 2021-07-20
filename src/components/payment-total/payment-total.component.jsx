@@ -1,27 +1,35 @@
-import "./payment-total.styles.scss";
-
 import React from "react";
 
 import StripeButton from "../stripe-button/stripe-button.component";
 
+import {
+  PaymentTotalContainer,
+  PaymentTotalTitle,
+  PaymentTotalAmount,
+  PaymentTotalButton,
+  PaymentWarningContainer,
+  PaymentWarningTitle,
+  PaymentWarningText,
+} from "./payment-total.styles";
+
 export const PaymentTotal = ({ total }) => {
   return (
-    <div className="payment-total-container">
-      <span className="payment-total-title">CART TOTAL</span>
-      <span className="payment-total-amount">${total.toFixed(2)}</span>
+    <PaymentTotalContainer>
+      <PaymentTotalTitle>CART TOTAL</PaymentTotalTitle>
+      <PaymentTotalAmount>${total.toFixed(2)}</PaymentTotalAmount>
       <StripeButton>
-        <span className="payment-total-button">Continue to Payment</span>
+        <PaymentTotalButton>Continue to Payment</PaymentTotalButton>
       </StripeButton>
-      <div className="payment-warning">
-        <h2 className="payment-warning-title">
+      <PaymentWarningContainer>
+        <PaymentWarningTitle>
           **USE THIS INFORMATION TO TEST THE PAYMENT**
-        </h2>
-        <div className="payment-warning-text">
+        </PaymentWarningTitle>
+        <PaymentWarningText>
           <span>Card Number: 4242-4242-4242-4242</span>
           <span>EXP: 10/10/2022</span>
           <span>CVC: 123</span>
-        </div>
-      </div>
-    </div>
+        </PaymentWarningText>
+      </PaymentWarningContainer>
+    </PaymentTotalContainer>
   );
 };

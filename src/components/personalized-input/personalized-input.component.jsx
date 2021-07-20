@@ -1,11 +1,10 @@
 import React from "react";
 
-import "./personalized-input.styles.scss";
+import { PersonalizedInputContainer } from "./personalized-input.styles";
 
 export const PersonalizedInput = ({ type, name, value, label, placeholder, onChange = null }) => {
   return (
-    <input
-      className="input"
+    <PersonalizedInputContainer
       type={type}
       name={name}
       label={label}

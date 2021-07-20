@@ -1,13 +1,13 @@
-import "./phones-container.styles.scss";
-
 import React from "react";
 import { Redirect } from "react-router";
 
 import PhoneContainer from "../phone-container/phone-container.component";
 
+import { PhonesContainerDiv } from "./phones-container.styles";
+
 export const PhonesContainer = ({ phonesData }) => {
   return (
-    <div className="phones-container">
+    <PhonesContainerDiv>
       {phonesData === undefined ? (
         <Redirect to="/" />
       ) : (
@@ -15,6 +15,6 @@ export const PhonesContainer = ({ phonesData }) => {
           <PhoneContainer key={index} phone={phone} />
         ))
       )}
-    </div>
+    </PhonesContainerDiv>
   );
 };

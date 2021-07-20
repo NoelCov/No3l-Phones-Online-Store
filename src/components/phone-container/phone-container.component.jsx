@@ -1,27 +1,28 @@
-import "./phone-container.styles.scss";
-
 import React from "react";
 
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cart.actions";
 
+import {
+  PhoneContainerContainer,
+  PhoneImage,
+  PhoneTitle,
+  ContentContainer,
+  ContentItem,
+} from "./phone-container.styles";
+
 const PhoneContainer = ({ phone, addItem }) => {
   const { imageUrl, phoneTitle, price } = phone;
 
   return (
-    <div className="phone-container">
-      <div
-        className="phone-image"
-        style={{ backgroundImage: `url(${imageUrl})` }}
-      />
-      <span className="phone-title">{phoneTitle}</span>
-      <div className="content">
-        <span onClick={() => addItem(phone)} className="content-item">
-          Buy this phone
-        </span>
-        <span className="content-item">{price.toFixed(2)}</span>
-      </div>
-    </div>
+    <PhoneContainerContainer>
+      <PhoneImage style={{ backgroundImage: `url(${imageUrl})` }} />
+      <PhoneTitle>{phoneTitle}</PhoneTitle>
+      <ContentContainer>
+        <ContentItem onClick={() => addItem(phone)}>Buy this phone</ContentItem>
+        <ContentItem>{price.toFixed(2)}</ContentItem>
+      </ContentContainer>
+    </PhoneContainerContainer>
   );
 };
 
